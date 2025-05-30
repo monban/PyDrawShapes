@@ -1,32 +1,29 @@
-import bitmap
+from bitmap import Bitmap
+from point import Point
 
-b = bitmap.Bitmap(40, 40, 20, 20)
+b = Bitmap(40, 40, 20, 20)
 
 r = 16
-y = 0
-x = r
+point = Point(r, 0)
 
+def CircleDistance(p: Point, r: int):
+    return abs(p.x**2+p.y**2-r**2)
 
-while y<x:
-    b.set(x,y)
-    b.set(y,x)
-    b.set(-x,y)
-    b.set(-y,x)
-    b.set(x,-y)
-    b.set(y,-x)
-    b.set(-x,-y)
-    b.set(-y,-x)
-    x1 = x
-    y1 = y+1
-    x2 = x-1
-    y2 = y+1
-    d1 = abs((x1)**2+(y1)**2-r**2)
-    d2 = abs((x2)**2+(y2)**2-r**2)
-    if d1 < d2:
-        x=x1
-        y=y1
+while point.y < point.x:
+    b.set(point)
+    b.set(Point(-point.x, point.y))
+    b.set(Point(point.x, -point.y))
+    b.set(Point(-point.x, -point.y))
+    b.set(Point(point.y, point.x))
+    b.set(Point(-point.y, point.x))
+    b.set(Point(point.y, -point.x))
+    b.set(Point(-point.y, -point.x))
+
+    p1 = Point(point.x, point.y+1)
+    p2 = Point(point.x-1, point.y+1)
+    if CircleDistance(p1, r) < CircleDistance(p2, r):
+        point = p1
     else:
-        x=x2
-        y=y2
+        point = p2
 
 b.blit()
