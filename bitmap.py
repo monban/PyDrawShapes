@@ -10,24 +10,6 @@ class Bitmap:
         self.xOffset = xOffset
         self.yOffset = yOffset
 
-    def blit(self):
-        line = 0
-        x = 0
-        for byte in self.bitmap:
-            if x % (self.width/8) == 0:
-                x=0
-                print()
-                print(f'{line:02d}: ', end='')
-                line += 1
-            for bit in range(8):
-                pass
-                if (byte & (0x80>>bit)):
-                    print('##', end='')
-                else:
-                    print('..', end='')
-            x += 1
-        print()
-
     def set(self, point: Point):
         x = point.x + self.xOffset
         y = point.y + self.yOffset

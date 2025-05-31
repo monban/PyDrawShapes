@@ -1,5 +1,6 @@
 from bitmap import Bitmap
 from point import Point
+import renderer_text
 
 b = Bitmap(40, 40, 20, 20)
 
@@ -32,4 +33,4 @@ while point.y < point.x:
     else:
         point = p2
 
-b.blit()
+renderer_text.blit(b)
