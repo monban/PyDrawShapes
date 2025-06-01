@@ -1,4 +1,4 @@
-from bitmap import Bitmap
+from .bitmap import Bitmap
 
 def blit(bitmap: Bitmap):
     line = 0

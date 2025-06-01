@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/circle/__init__.py
+src/circle/__main__.py
+src/circle/bitmap.py
+src/circle/point.py
+src/circle/renderer_text.py
+src/circle.egg-info/PKG-INFO
+src/circle.egg-info/SOURCES.txt
+src/circle.egg-info/dependency_links.txt
+src/circle.egg-info/entry_points.txt
+src/circle.egg-info/top_level.txt
