@@ -1,11 +1,13 @@
-from typing import Callable
+from collections.abc import Callable
+
 from .point import Point
 
+
 class Circle:
-    def __init__(self, radius: int):
+    def __init__(self, radius: int) -> None:
         self.r = radius
 
-    def draw(self, func: Callable[[Point], None]):
+    def draw(self, func: Callable[[Point], None]) -> None:
         point = Point(self.r, 0)
 
         while point.y < point.x:
@@ -19,10 +21,10 @@ class Circle:
             else:
                 point = p2
 
-def circleDistance(p: Point, r: int):
+def circleDistance(p: Point, r: int) -> int:
     return abs(p.x**2+p.y**2-r**2)
 
-def mirrorPoints(p: Point):
+def mirrorPoints(p: Point) -> dict:
     return [
         Point(p.x, p.y),
         Point(-p.x, p.y),
@@ -33,4 +35,4 @@ def mirrorPoints(p: Point):
         Point(p.y, -p.x),
         Point(-p.y, -p.x),
     ]
-    
+
