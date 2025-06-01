@@ -7,4 +7,3 @@ c = Circle(18)
 
 c.draw(b.set)
 blit(b)
-
