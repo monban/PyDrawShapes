@@ -1,4 +1,4 @@
-from .point import Point
+from shape.point import Point
 
 class Bitmap:
     def __init__(self, width: int, height: int, xOffset: int, yOffset: int):

@@ -1,6 +1,6 @@
-from circle.bitmap import Bitmap
-from circle.circle import Circle
-from circle.renderer_text import blit
+from shape.circle import Circle
+from render.bitmap import Bitmap
+from render.text import blit
 
 b = Bitmap(40, 40, 19, 19)
 c = Circle(18)
