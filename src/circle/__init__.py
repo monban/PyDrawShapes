@@ -1,6 +1,6 @@
 from .bitmap import Bitmap
 from .point import Point
-import circle.renderer_text
+from .renderer_text import blit
 
 def circleDistance(p: Point, r: int):
     return abs(p.x**2+p.y**2-r**2)
@@ -33,4 +33,4 @@ def main():
         else:
             point = p2
 
-    circle.renderer_text.blit(b)
+    blit(b)
